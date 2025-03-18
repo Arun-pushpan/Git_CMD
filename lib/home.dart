@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'icon_home.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -11,14 +13,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +32,15 @@ class _MyHomePageState extends State<MyHomePage> {
             const Text('You have pushed the button this many times:'),
             const Text('You have pushed the button this many times:'),
             const Text('You have pushed the button this many times:'),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const IconHome()),
+                );
+              },
+              child: const Text('Go to IconHome'),
+            ),
           ],
         ),
       ),
